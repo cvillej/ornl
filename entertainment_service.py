@@ -5,9 +5,36 @@ from weather_sensor_service import WeatherSensorService
 
 
 class EntertainmentService:
+    """
+    A class that will find entertainment.  It considers the city you live in and the weather there to make a judgement
+    if you should do an indoor or outdoor activity.
+
+    ...
+
+    Attributes
+    ----------
+    config : dict
+        A dictionary containing all the config values.
+
+    Methods
+    -------
+    check_weather_is_good(city=""):
+        Logs info messages.
+    find_entertainment(city=""):
+        Logs warning messages.
+    log_error(msg_text=""):
+        Logs error messages.
+    """
 
     def __init__(self, config):
-        self.logger = LoggingService()
+        """
+        Parameters
+        ----------
+        config : dict
+            The configuration for the application
+        """
+
+        self.logger = LoggingService(config)
         self.database = MockDbService(config)
         self.entertainment_factory = EntertainmentFactory(config)
         self.weather_service = WeatherSensorService(config)
@@ -23,7 +50,21 @@ class EntertainmentService:
     def __exit__(self, exception_type, exception_value, traceback):
         self.database.close()
 
-    def check_weather_is_good(self, city):
+    def __check_weather_is_good(self, city):
+        """
+        Makes a very rude determination on of the weather is good.  If the weather description has the word 'rain'
+        anywhere it is considered BAD weather.  Otherwise, it is considered GOOD weather.
+
+        Parameters
+        ----------
+        city : str
+            The city to check the weather in
+
+        Returns
+        -------
+        boolean
+            Is the weather good or bad
+        """
         weather = self.weather_service.get_weather(city)
         if weather is None:
             self.logger.log_warn("Unable to get current weather for: {}".format(city))
@@ -42,7 +83,27 @@ class EntertainmentService:
         return True
 
     def find_entertainment(self, city):
-        is_good_weather = self.check_weather_is_good(city)
-        entertainment_provider = self.entertainment_factory.get_provider(is_good_weather)
+        """
+        Will find "entertainment" (A single text sentence suggesting an activity) based on the weather.  If the weather
+        is good it will provide outdoor activities.  If it is bad, it will return an indoor activity.  It will
+        also save the current activity and weather to the database.
 
-        return entertainment_provider.get_entertainment()
+
+        Parameters
+        ----------
+        city : str
+            The city to check the weather in
+
+        Returns
+        -------
+        activity : str
+            A sentence describing an indoor or outdoor activity
+        """
+        is_good_weather = self.__check_weather_is_good(city)
+        self.database.save_current_weather(is_good_weather)
+
+        entertainment_provider = self.entertainment_factory.get_provider(is_good_weather)
+        activity = entertainment_provider.get_entertainment()
+        self.database.save_current_activity(activity)
+
+        return activity

@@ -2,6 +2,25 @@ from copy import copy
 
 
 class LoggingService:
+    """
+    A class to perform logging.
+
+    ...
+
+    Attributes
+    ----------
+    config : dict
+        A dictionary containing all the config values.
+
+    Methods
+    -------
+    log_info(msg_text=""):
+        Logs info messages.
+    log_warn(msg_text=""):
+        Logs warning messages.
+    log_error(msg_text=""):
+        Logs error messages.
+    """
 
     __log_msgs = {
         'error': [],
@@ -9,7 +28,22 @@ class LoggingService:
         'warn': []
     }
 
+    def __init__(self, config):
+        self.config = config;
+
     def log_info(self, msg_text):
+        """
+        Logs info messages.
+
+        Parameters
+        ----------
+        msg_text : str
+            The text of the message to log
+
+        Returns
+        -------
+        None
+        """
         message = {
             'msg_text': msg_text,
             'msg_date': 'PUT DATE HERE'
@@ -18,6 +52,18 @@ class LoggingService:
         self.__log_msgs.get('info').append(message)
 
     def log_warn(self, msg_text):
+        """
+        Logs warning messages.
+
+        Parameters
+        ----------
+        msg_text : str
+            The text of the message to log
+
+        Returns
+        -------
+        None
+        """
         message = {
             'msg_text': msg_text,
             'msg_date': 'PUT DATE HERE'
@@ -26,6 +72,18 @@ class LoggingService:
         self.__log_msgs.get('warn').append(message)
 
     def log_error(self, msg_text, exception=None):
+        """
+        Logs error messages.
+
+        Parameters
+        ----------
+        msg_text : str
+            The text of the message to log
+
+        Returns
+        -------
+        None
+        """
         message = {
             'msg_text': msg_text,
             'msg_date': 'PUT DATE HERE'
@@ -36,12 +94,3 @@ class LoggingService:
 
         print('ERROR: {}'.format(message))
         self.__log_msgs.get('error').append(message)
-
-    def get_info_logs(self):
-        return copy(self.__log_msgs.get('info'))
-
-    def get_error_logs(self):
-        return copy(self.__log_msgs.get('error'))
-
-    def get_all_logs(self):
-        return copy(self.__log_msgs)

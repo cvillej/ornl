@@ -3,32 +3,53 @@ from outdoor_entertainment_provider import OutdoorEntertainmentProvider
 from constants import INDOOR_PROVIDER, OUTDOOR_PROVIDER
 
 
-
-# TODO: choose different provider based on config.  Change provider if one is not working
-# TODO: Draw ascii art and return it if the provider is not afailable
-# TODO: Have file that indicates if internet is ON or OFF
-# get random provider or best provider
-# choose provider based off the weather.  if weather is bad, sit home and look at ascii art
-# if weather provider is down aka (no internet), flip a coin
-
 class EntertainmentFactory:
     """
-    We will select the correct provider based on the current weather.
-    If the weather is good, we will get fandgo movie times.  If the weather is bad, we will draw the user
-    a picture that they can view at home and not get wet.
-    NOTE: Providers will be lazy loaded since we may never need them all.
+    This factory class will provide an implementation to provide activities, either indoor or outdoor, based on
+    weather conditions.
+
+    ...
+
+    Attributes
+    ----------
+    config : dict
+        A dictionary containing all the config values.
+
+    Methods
+    -------
+    get_provider(is_weather_good):
+        Get an indoor or outdoor provider depending on weather.
     """
+
     providers = {}
 
     def __init__(self, config):
+        """
+        Parameters
+        ----------
+        config : dict
+            The configuration for the application
+        """
+
         self.config = config
 
     def get_provider(self, is_weather_good):
-        # If the weather is good, we will go out to see a movie!
-        # If it is bad, we will stay home and look at a picture
+        """
+        Get an indoor or outdoor entertainment provider.
+
+        Parameters
+        ----------
+        is_weather_good : bool
+            A flag indicating if the weather is good.
+
+        Returns
+        -------
+        EntertainmentProvider
+            Either an indoor or outdoor entertainment provider.
+        """
         if is_weather_good:
             if not (OUTDOOR_PROVIDER in self.providers):
-                self.providers[OUTDOOR_PROVIDER] = OutdoorEntertainmentProvider(self.config)
+                self.providers[OUTDOOR_PROVIDER] = OutdoorEntertainmentProvider()
             entertainment_provider = self.providers[OUTDOOR_PROVIDER]
 
         else:
