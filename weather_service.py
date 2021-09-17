@@ -4,7 +4,7 @@ import requests
 from mock_logging_service import LoggingService
 
 
-class WeatherSensorService:
+class WeatherService:
     """
     A class to lookup weather, based on the city passed in.
 

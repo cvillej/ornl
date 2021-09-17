@@ -1,7 +1,7 @@
 from mock_db_service import MockDbService
 from mock_logging_service import LoggingService
 from entertainment_factory import EntertainmentFactory
-from weather_sensor_service import WeatherSensorService
+from weather_service import WeatherService
 
 
 class EntertainmentService:
@@ -37,7 +37,7 @@ class EntertainmentService:
         self.logger = LoggingService(config)
         self.database = MockDbService(config)
         self.entertainment_factory = EntertainmentFactory(config)
-        self.weather_service = WeatherSensorService(config)
+        self.weather_service = WeatherService(config)
 
     def __enter__(self):
         try:

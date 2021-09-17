@@ -21,6 +21,9 @@ There are more principles that I find useful but I didn't have time to implement
 ## Installation
 I chose conda since I already had it installed :) You are welcome to use any python environment manager.
 ```bash
+git clone git@github.com:cvillej/ornl.git
+
+cd ornl
 
 conda create -n ornl python=3.6
 conda activate ornl
@@ -28,6 +31,17 @@ conda install --file requirements.txt
 ```
 
 ## Running
+You may need to set the PYTHONPATH enviornment variable.  Here is an example of how I set mine to run the application:
 ```bash
-
+PYTHONPATH=/Users/jonathonfortney/dev/ornl
 ```
+
+Run the program:
+```bash
+python ornl_cli.py
+```
+
+## Obvious ommisions and immaturity
+* Testing
+* Error percolation, program flow based on errors and more formal error trapping and handling
+* Better design docs
