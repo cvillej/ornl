@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>ornl package &#8212; ORNL Demo 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="ornl-package">
+<h1>ornl package<a class="headerlink" href="#ornl-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-ornl.constants">
+<span id="ornl-constants-module"></span><h2>ornl.constants module<a class="headerlink" href="#module-ornl.constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-ornl.entertainment_factory">
+<span id="ornl-entertainment-factory-module"></span><h2>ornl.entertainment_factory module<a class="headerlink" href="#module-ornl.entertainment_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.entertainment_factory.EntertainmentFactory">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.entertainment_factory.</span></span><span class="sig-name descname"><span class="pre">EntertainmentFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.entertainment_factory.EntertainmentFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This factory class will provide an implementation to provide activities, either indoor or outdoor, based on
+weather conditions.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – A dictionary containing all the config values.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_provider(is_weather_good):</span></span></dt>
+<dd><p>Get an indoor or outdoor provider depending on weather.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.entertainment_factory.EntertainmentFactory.get_provider">
+<span class="sig-name descname"><span class="pre">get_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_weather_good</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.entertainment_factory.EntertainmentFactory.get_provider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an indoor or outdoor entertainment provider.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>is_weather_good</strong> (<em>bool</em>) – A flag indicating if the weather is good.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Either an indoor or outdoor entertainment provider.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ornl.entertainment_provider.EntertainmentProvider" title="ornl.entertainment_provider.EntertainmentProvider">EntertainmentProvider</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ornl.entertainment_factory.EntertainmentFactory.providers">
+<span class="sig-name descname"><span class="pre">providers</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#ornl.entertainment_factory.EntertainmentFactory.providers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.entertainment_provider">
+<span id="ornl-entertainment-provider-module"></span><h2>ornl.entertainment_provider module<a class="headerlink" href="#module-ornl.entertainment_provider" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.entertainment_provider.EntertainmentProvider">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.entertainment_provider.</span></span><span class="sig-name descname"><span class="pre">EntertainmentProvider</span></span><a class="headerlink" href="#ornl.entertainment_provider.EntertainmentProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An Abstract Base Classes defining the functions needed for implementing classes.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_entertainment(msg_text=&quot;&quot;):</span></span></dt>
+<dd><p>Logs info messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.entertainment_provider.EntertainmentProvider.get_entertainment">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_entertainment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ornl.entertainment_provider.EntertainmentProvider.get_entertainment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get and return an indoor or outdoor activity string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An indoor or outdoor activity.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.entertainment_service">
+<span id="ornl-entertainment-service-module"></span><h2>ornl.entertainment_service module<a class="headerlink" href="#module-ornl.entertainment_service" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.entertainment_service.EntertainmentService">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.entertainment_service.</span></span><span class="sig-name descname"><span class="pre">EntertainmentService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.entertainment_service.EntertainmentService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class that will find entertainment.  It considers the city you live in and the weather there to make a judgement
+if you should do an indoor or outdoor activity.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – A dictionary containing all the config values.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_weather_is_good(city=&quot;&quot;):</span></span></dt>
+<dd><p>Logs info messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">find_entertainment(city=&quot;&quot;):</span></span></dt>
+<dd><p>Logs warning messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">log_error(msg_text=&quot;&quot;):</span></span></dt>
+<dd><p>Logs error messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.entertainment_service.EntertainmentService.find_entertainment">
+<span class="sig-name descname"><span class="pre">find_entertainment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">city</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.entertainment_service.EntertainmentService.find_entertainment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will find “entertainment” (A single text sentence suggesting an activity) based on the weather.  If the weather
+is good it will provide outdoor activities.  If it is bad, it will return an indoor activity.  It will
+also save the current activity and weather to the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>city</strong> (<em>str</em>) – The city to check the weather in</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>activity</strong> – A sentence describing an indoor or outdoor activity</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.indoor_entertainment_provider">
+<span id="ornl-indoor-entertainment-provider-module"></span><h2>ornl.indoor_entertainment_provider module<a class="headerlink" href="#module-ornl.indoor_entertainment_provider" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.indoor_entertainment_provider.IndoorEntertainmentProvider">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.indoor_entertainment_provider.</span></span><span class="sig-name descname"><span class="pre">IndoorEntertainmentProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.indoor_entertainment_provider.IndoorEntertainmentProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">entertainment_provider.EntertainmentProvider</span></code></p>
+<p>This class supports calling a REST API to retrieve indoor activity strings.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – A dictionary containing all the config values.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_entertainment():</span></span></dt>
+<dd><p>Calls a REST endpoint and return the activity or None.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.indoor_entertainment_provider.IndoorEntertainmentProvider.get_entertainment">
+<span class="sig-name descname"><span class="pre">get_entertainment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ornl.indoor_entertainment_provider.IndoorEntertainmentProvider.get_entertainment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls a REST API to retrieve indoor activity strings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>activity</strong> – An indoor activity string.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.mock_db_service">
+<span id="ornl-mock-db-service-module"></span><h2>ornl.mock_db_service module<a class="headerlink" href="#module-ornl.mock_db_service" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.mock_db_service.MockDbService">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.mock_db_service.</span></span><span class="sig-name descname"><span class="pre">MockDbService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_db_service.MockDbService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class that imitates, very loosely, a database.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – A dictionary containing all the config values.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">connect():</span></span></dt>
+<dd><p>Connect to the fake db.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">close():</span></span></dt>
+<dd><p>Close the connection to the fake db.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">save_current_weather():</span></span></dt>
+<dd><p>Save the current weather to the db.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">save_current_activity():</span></span></dt>
+<dd><p>Save teh current activity to the db.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_db_service.MockDbService.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_db_service.MockDbService.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_db_service.MockDbService.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_db_service.MockDbService.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_db_service.MockDbService.save_current_activity">
+<span class="sig-name descname"><span class="pre">save_current_activity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_db_service.MockDbService.save_current_activity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_db_service.MockDbService.save_current_weather">
+<span class="sig-name descname"><span class="pre">save_current_weather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weather</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_db_service.MockDbService.save_current_weather" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.mock_logging_service">
+<span id="ornl-mock-logging-service-module"></span><h2>ornl.mock_logging_service module<a class="headerlink" href="#module-ornl.mock_logging_service" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.mock_logging_service.LoggingService">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.mock_logging_service.</span></span><span class="sig-name descname"><span class="pre">LoggingService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_logging_service.LoggingService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to perform logging.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<em>dict</em>) – A dictionary containing all the config values.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">log_info(msg_text=&quot;&quot;):</span></span></dt>
+<dd><p>Logs info messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">log_warn(msg_text=&quot;&quot;):</span></span></dt>
+<dd><p>Logs warning messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">log_error(msg_text=&quot;&quot;):</span></span></dt>
+<dd><p>Logs error messages.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_logging_service.LoggingService.log_error">
+<span class="sig-name descname"><span class="pre">log_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_logging_service.LoggingService.log_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs error messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg_text</strong> (<em>str</em>) – The text of the message to log</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_logging_service.LoggingService.log_info">
+<span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_logging_service.LoggingService.log_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs info messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg_text</strong> (<em>str</em>) – The text of the message to log</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.mock_logging_service.LoggingService.log_warn">
+<span class="sig-name descname"><span class="pre">log_warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.mock_logging_service.LoggingService.log_warn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs warning messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg_text</strong> (<em>str</em>) – The text of the message to log</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.ornl_cli">
+<span id="ornl-ornl-cli-module"></span><h2>ornl.ornl_cli module<a class="headerlink" href="#module-ornl.ornl_cli" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ornl.ornl_cli.load_config_file">
+<span class="sig-prename descclassname"><span class="pre">ornl.ornl_cli.</span></span><span class="sig-name descname"><span class="pre">load_config_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.ornl_cli.load_config_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the json config file from disk</p>
+</dd></dl>
+
+</section>
+<section id="module-ornl.outdoor_entertainment_provider">
+<span id="ornl-outdoor-entertainment-provider-module"></span><h2>ornl.outdoor_entertainment_provider module<a class="headerlink" href="#module-ornl.outdoor_entertainment_provider" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.outdoor_entertainment_provider.OutdoorEntertainmentProvider">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.outdoor_entertainment_provider.</span></span><span class="sig-name descname"><span class="pre">OutdoorEntertainmentProvider</span></span><a class="headerlink" href="#ornl.outdoor_entertainment_provider.OutdoorEntertainmentProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">entertainment_provider.EntertainmentProvider</span></code></p>
+<p>This class will provide an outdoor activity selected randomly from a list.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>outdoor_activities</strong> (<em>list</em>) – A list of possible outdoor activities.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_entertainment():</span></span></dt>
+<dd><p>Returns a random outdoor activity string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.outdoor_entertainment_provider.OutdoorEntertainmentProvider.get_entertainment">
+<span class="sig-name descname"><span class="pre">get_entertainment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ornl.outdoor_entertainment_provider.OutdoorEntertainmentProvider.get_entertainment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select an outdoor activity randomly from a list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A sentence describing an outdoor activity.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ornl.outdoor_entertainment_provider.OutdoorEntertainmentProvider.outdoor_activities">
+<span class="sig-name descname"><span class="pre">outdoor_activities</span></span><em class="property"> <span class="pre">=</span> <span class="pre">['Go</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">run.',</span> <span class="pre">'Walk</span> <span class="pre">the</span> <span class="pre">dog.',</span> <span class="pre">'Mow</span> <span class="pre">the</span> <span class="pre">lawn.',</span> <span class="pre">'Heard</span> <span class="pre">the</span> <span class="pre">sheep.']</span></em><a class="headerlink" href="#ornl.outdoor_entertainment_provider.OutdoorEntertainmentProvider.outdoor_activities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl.weather_sensor_service">
+<span id="ornl-weather-sensor-service-module"></span><h2>ornl.weather_sensor_service module<a class="headerlink" href="#module-ornl.weather_sensor_service" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ornl.weather_sensor_service.WeatherSensorService">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ornl.weather_sensor_service.</span></span><span class="sig-name descname"><span class="pre">WeatherSensorService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.weather_sensor_service.WeatherSensorService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to lookup weather, based on the city passed in.</p>
+<p>…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em>) – A dictionary containing all the config values.</p></li>
+<li><p><strong>logger</strong> (<em>object</em>) – A class that mocks logging capability</p></li>
+<li><p><strong>base_url</strong> (<em>str</em>) – The base url for the weather rest endpoint</p></li>
+<li><p><strong>query_string_template</strong> (<em>str</em>) – Appended to the base_url, it contains the query params required for the REST endpoint.</p></li>
+<li><p><strong>api_ky</strong> (<em>str</em>) – The api key needed to access the REST endpoint</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_weather(city=&quot;&quot;):</span></span></dt>
+<dd><p>Gets a weather report, in json format, for the city passed in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ornl.weather_sensor_service.WeatherSensorService.get_weather">
+<span class="sig-name descname"><span class="pre">get_weather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">city</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ornl.weather_sensor_service.WeatherSensorService.get_weather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a weather report, in json format, for the city passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>city</strong> (<em>str</em>) – The city to query the endpoint by.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>city_weather</strong> – The weather report for the city.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict || None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ornl">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ornl" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ORNL Demo</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jon Fortney.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/ornl.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

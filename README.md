@@ -12,7 +12,7 @@ To write code that illustates how I think about software development principles.
     * Easier and better testing
 * Pluggable architecture and other approaches for extensibility
 * Classes and abstract base classes: Clearly define the domain and state.  Also paints a clear picture of how a future engineer would add new components.
-* Code documentation: I have generated HTML docs based on the code documentation.  That can be found [HERE](./docs/_build/html/index.html)
+* Code documentation: I have generated HTML docs based on the code documentation.  That can be found [HERE](./docs/build/html/index.html)
 * Explicit configuration: In one obvious place.  Not embedded deep in subsystems.
 
 
