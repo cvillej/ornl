@@ -1,4 +1,3 @@
-nose
 sphinx
 requests
 click

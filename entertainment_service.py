@@ -78,6 +78,7 @@ class EntertainmentService:
         self.logger.log_info('weather for city: ' + weather_for_city.get('description'))
         if 'rain' in weather_for_city.get('description').lower():
             self.logger.log_info('weather: {}'.format(weather_for_city))
+
             return False
 
         return True
@@ -99,11 +100,16 @@ class EntertainmentService:
         activity : str
             A sentence describing an indoor or outdoor activity
         """
+        self.logger.log_info('Get current weather...')
         is_good_weather = self.__check_weather_is_good(city)
+        self.logger.log_info('Is the current weather in {} good? -- {}'.format(city, is_good_weather))
         self.database.save_current_weather(is_good_weather)
 
         entertainment_provider = self.entertainment_factory.get_provider(is_good_weather)
+        self.logger.log_info('Because of the weather we are using an {}'.format(type(entertainment_provider)))
+
         activity = entertainment_provider.get_entertainment()
+
         self.database.save_current_activity(activity)
 
         return activity

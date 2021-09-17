@@ -1,4 +1,4 @@
-from ornl.mock_db_service import MockDb
+from mock_db_service import MockDb
 
 # logger = LoggingService()
 # logger.log_info("test 1")

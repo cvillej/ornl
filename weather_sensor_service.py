@@ -1,7 +1,7 @@
 import json
 import requests
 
-from ornl.mock_logging_service import LoggingService
+from mock_logging_service import LoggingService
 
 
 class WeatherSensorService:

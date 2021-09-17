@@ -48,7 +48,7 @@ class LoggingService:
             'msg_text': msg_text,
             'msg_date': 'PUT DATE HERE'
         }
-        print('INFO: {}'.format(message))
+        print('INFO: {}'.format(msg_text))
         self.__log_msgs.get('info').append(message)
 
     def log_warn(self, msg_text):

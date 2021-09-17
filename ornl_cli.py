@@ -2,6 +2,8 @@ import click
 import json
 
 from entertainment_service import EntertainmentService
+from mock_logging_service import LoggingService
+
 
 
 @click.command()
@@ -29,11 +31,13 @@ def provide_entertainment(city, username, config_file):
 
     try:
         config = load_config_file(config_file)
+        logger = LoggingService(config)
     except FileNotFoundError:
-        print('Configuration file: {} not found.  Exiting...'.format(config_file))
+        logger.log_error('Configuration file: {} not found.  Exiting...'.format(config_file))
         quit()
     with EntertainmentService(config) as entertainment_service:
-        entertainment_service.find_entertainment(city)
+        recommended_activity = entertainment_service.find_entertainment(city)
+        print('Hi {}!  We recommend you "{}" because of the weather in {}'.format(username, recommended_activity, city))
 
 
 def load_config_file(config_file_path):
