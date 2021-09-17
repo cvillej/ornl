@@ -12,7 +12,7 @@ To write code that illustates how I think about software development principles.
     * Easier and better testing
 * Pluggable architecture and other approaches for extensibility
 * Classes and abstract base classes: Clearly define the domain and state.  Also paints a clear picture of how a future engineer would add new components.
-* Code documentation: I have generated HTML docs based on the code documentation.  That can be found here (**put link to html docs here**)
+* Code documentation: I have generated HTML docs based on the code documentation.  That can be found [HERE](./docs/_build/html/index.html)
 * Explicit configuration: In one obvious place.  Not embedded deep in subsystems.
 
 
@@ -41,7 +41,15 @@ Run the program:
 python ornl_cli.py
 ```
 
+
+## Diagram
+This is a crude diagram.  It is intended to give a general idea of the architecture and classes involved.  If I had more time these would be a little more formal and accurate.
+
+![image info](./docs/ornl-diagram.png)
+
 ## Obvious ommisions and immaturity
 * Testing
 * Error percolation, program flow based on errors and more formal error trapping and handling
 * Better design docs
+
+
